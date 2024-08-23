@@ -19,20 +19,26 @@ primo = 0
 i = 0
 apresentacao = ""
 potencia = 0
+teste = ""
 
 if n > 1:
     while n != 1:
+            
         if n % dividendo == 0:
             base = dividendo
             potencia +=1 
             n = n // dividendo
+            teste = str(base)+" ^ "+str(potencia)
         else:
-            if apresentacao == "":
-                apresentacao = str(base)+"^"+str(potencia)
-            else:    
-                apresentacao = apresentacao +" * "+ str(base)+" ^ "+str(potencia)
+            if teste != "":
+                if apresentacao != "":
+                    apresentacao += " * " + teste                
+                else:
+                    apresentacao += teste                
+                teste = ""
 
             dividendo +=1
+            div = 1
             while div != dividendo:
                 div +=1                
                 if dividendo % div == 0:
@@ -40,7 +46,9 @@ if n > 1:
                 
                 if primo > 2:
                     dividendo +=1 
-                    div == 1
+                    potencia = 0
+                    div = 1
+                    primo = 0
 
 if apresentacao == "":
     apresentacao = str(base)+" ^ "+str(potencia)
