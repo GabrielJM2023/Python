@@ -19,6 +19,17 @@ def EditarContato():
     print("Qual contato deseja Editar?")
     VizualizarContato()
     input("")
+
+    print("Caso não deseje atualizar algum campo é só pressionar o ENTER")
+
+    print("Qual o nome do contato?")
+    Contato["nome"] = input("")
+    
+    print("Qual o telefone do contato?")
+    Contato["telefone"] = input("")    
+    
+    print("Qual o email do contato?")
+    Contato["email"] = input("")    
     
 def FavoritarContato():            
     print("Qual contato deseja Favoritar?")
@@ -33,7 +44,7 @@ def ApagarContato():
 def Selecionado(opcao):
     if opcao == 1:
         AdicionarContato()
-    elif opcao == 2:
+    elif opcao == "2":
         VizualizarContato()
     elif opcao == 3:        
         EditarContato()
@@ -54,7 +65,7 @@ while i == 0:
     print("4-Marcar/Desmarcar um contato como favorito")
     print("5-Apagar contato")
     print("*-------------------------------------------*")
-    selecao = input("")
+    selecao = input("Digite a opção desejada: ")
 
     Selecionado(selecao)
 
