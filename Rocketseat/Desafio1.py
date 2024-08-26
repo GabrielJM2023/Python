@@ -1,19 +1,23 @@
-Contato = {"id","nome", "telefone","email"}
+Contato = {"nome", "telefone","email"}
 
 def AdicionarContato():
     print("Para adicionar um novo contato, tenha em mãos o Nome, Telefone e Email")
-    
+    novo_id = len(Contato) + 1
+    Contato[novo_id] = {"id": novo_id}
+
     print("Qual o nome do contato?")
-    Contato["nome"] = input("")
+    Contato[novo_id] = {"nome": input("")}
     
     print("Qual o telefone do contato?")
-    Contato["telefone"] = input("")    
+    Contato[novo_id] = {"telefone": input("")}
     
     print("Qual o email do contato?")
-    Contato["email"] = input("")
+    Contato[novo_id] = {"email": input("")}
 
-def VizualizarContato():    
-    print("Id", Contato["id"], "Nome", Contato["nome"],"Telefone", Contato["telefone"],"Email", Contato["email"],)
+def VizualizarContato():  
+    print("Id", " Nome", " Telefone", " Email")   
+    for contato in Contato.values():
+        print("Id", Contato["id"], "Nome", Contato["nome"],"Telefone", Contato["telefone"],"Email", Contato["email"])
 
 def EditarContato():        
     print("Qual contato deseja Editar?")
