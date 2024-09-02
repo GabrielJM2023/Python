@@ -84,3 +84,20 @@ tupla.append(4)  # Isso causará um erro
 
 Essas características fazem as listas e tuplas adequadas para diferentes cenários em Python.
 """ 
+
+
+# Para construir classes no python 
+# É obrigatório o __init__, que é o construtor
+# Para criar atributos, utiliza-se o self e tem q passar por parametro
+
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.nome = nome
+        self.idade = idade
+
+    def apresentar(self):
+        print(f"Olá, meu nome é {self.nome} e eu tenho {self.idade} anos.")
+
+# Criando um objeto da classe Pessoa
+pessoa = Pessoa("Arthur", 25)
+pessoa.apresentar()
